@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2>Create QR Code</h2>
+
+<form method="POST">
+
+<input name="text" placeholder="URL or text" required>
+
+<select name="type">
+<option value="url">URL</option>
+<option value="text">Text</option>
+</select>
+
+<input type="date" name="expiry">
+
+<input name="password" placeholder="Optional password">
+
+<label>
+One Time QR
+<input type="checkbox" name="oneTime">
+</label>
+
+<button>Create</button>
+
+</form>
+
+<% if(qrImage){ %>
+<h3>Your QR</h3>
+<img src="<%= qrImage %>">
+<% } %>
+
+<a href="/qr/dashboard">Back</a>
+
+</body>
+</html>
